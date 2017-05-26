@@ -36,6 +36,10 @@ function convertDate(thisDate)
 			{
 			return new Date(String(thisDate));
 			}
+		if (thisDate.getClass().toString().equals("class java.sql.Timestamp"))
+			{
+			return new Date(thisDate.getMonth() + "/" + thisDate.getDate() + "/" + thisDate.getYear());
+			}
 		}
 
 	if (typeof(thisDate) == "number")
