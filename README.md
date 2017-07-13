@@ -1,6 +1,6 @@
 # MasterScripts
 
-9.2.0 Branch created for Engineering to add updates. 
+9.2.0 Branch created for next release. 
 
 9.0.0 Branch for new release procedure
 
