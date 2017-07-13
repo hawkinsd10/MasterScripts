@@ -16,7 +16,11 @@ function loadParcelAttributes(thisArr) {
   	
   	for (i in fcapParcelObj)
   		{
-  		parcelArea += fcapParcelObj[i].getParcelArea()
+  		// parcelArea += fcapParcelObj[i].getParcelArea()  // change requested 5/22/2017 by J.White
+		if (fcapParcelObj[i].getParcelArea()){
+				parcelArea += parseFloat(fcapParcelObj[i].getParcelArea());
+		}
+
   		parcelAttrObj = fcapParcelObj[i].getParcelAttribute().toArray();
   		for (z in parcelAttrObj)
 			thisArr["ParcelAttribute." + parcelAttrObj[z].getB1AttributeName()]=parcelAttrObj[z].getB1AttributeValue();
