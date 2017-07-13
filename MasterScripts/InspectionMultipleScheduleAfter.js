@@ -7,7 +7,7 @@
 | Client  : N/A
 | Action# : N/A
 |
-| Notes   :
+| Notes   : Corrections in line 139 & 141 for consistent execution of INCLUDES_ACCELA_GLOBALS 5.11.17 jchalk
 |
 |
 /------------------------------------------------------------------------------------------------------*/
@@ -133,9 +133,9 @@ for (thisResult in schedObjArray) {
     	aa.env.setValue("PermitId3",capId.getID3());
     
 		if (SA) {
-			eval(getScriptText("INCLUDES_ACCELA_GLOBALS", SA));
+			eval(getScriptText("INCLUDES_ACCELA_GLOBALS",SA,useCustomScriptFile));
 		} else {
-			eval(getScriptText("INCLUDES_ACCELA_GLOBALS"));
+			eval(getScriptText("INCLUDES_ACCELA_GLOBALS",null,useCustomScriptFile));
 		}
 
 		resultCapIdStringSave = capIDString;
