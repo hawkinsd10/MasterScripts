@@ -4615,7 +4615,7 @@ function copyConditionsFromParcel(parcelIdString)
 			
 			if (!appHasCondition(thisC.getConditionType(),null,thisC.getConditionDescription(),thisC.getImpactCode()))
 				{
-				var addCapCondResult = aa.capCondition.addCapCondition(capId, thisC.getConditionType(), thisC.getConditionDescription(), thisC.getConditionComment(), thisC.getEffectDate(), thisC.getExpireDate(), sysDate, thisC.getRefNumber1(),thisC.getRefNumber2(), thisC.getImpactCode(), thisC.getIssuedByUser(), thisC.getStatusByUser(), thisC.getConditionStatus(), currentUserID, "A")
+				var addCapCondResult = aa.capCondition.addCapCondition(capId, thisC.getConditionType(), thisC.getConditionDescription(), thisC.getConditionComment(), thisC.getEffectDate(), thisC.getExpireDate(), sysDate, thisC.getRefNumber1(),thisC.getRefNumber2(), thisC.getImpactCode(), thisC.getIssuedByUser(), thisC.getStatusByUser(), thisC.getConditionStatus(), currentUserID, "A", thisC.getConditionStatusType(),thisC.getDisplayConditionNotice(),thisC.getIncludeInConditionName(),thisC.getIncludeInShortDescription(),thisC.getInheritable(),thisC.getLongDescripton(),thisC.getPublicDisplayMessage(),thisC.getResolutionAction(),null,null,thisC.getConditionNumber(),thisC.getConditionGroup(),thisC.getDisplayNoticeOnACA(),thisC.getDisplayNoticeOnACAFee());
 				if (addCapCondResult.getSuccess())
 					logDebug("Successfully added condition (" +  thisC.getImpactCode() + ") " +  thisC.getConditionDescription());
 				else
