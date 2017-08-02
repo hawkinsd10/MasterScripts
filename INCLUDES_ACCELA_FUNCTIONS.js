@@ -9802,7 +9802,7 @@ function getContactArray()
 	// on ASA it should still be pulled normal way even though still partial cap
 	var thisCap = capId;
 	if (arguments.length == 1) thisCap = arguments[0];
-
+	var cap = aa.cap.getCapViewBySingle(thisCap);
 	var cArray = new Array();
 
 	if (arguments.length == 0 && !cap.isCompleteCap() && controlString != "ApplicationSubmitAfter") // we are in a page flow script so use the capModel to get contacts
@@ -9994,6 +9994,7 @@ function getContactObj(itemCap,typeToLoad)
 {
     // returning the first match on contact type
     var capContactArray = null;
+	var cap = aa.cap.getCapViewBySingle(itemCap);
     var cArray = new Array();
 
     if (itemCap.getClass() == "com.accela.aa.aamain.cap.CapModel")   { // page flow script 
@@ -10054,6 +10055,7 @@ function getContactObjs(itemCap) // optional typeToLoad, optional return only on
     var typesToLoad = false;
     if (arguments.length == 2) typesToLoad = arguments[1];
     var capContactArray = new Array();
+	var cap = aa.cap.getCapViewBySingle(itemCap);
     var cArray = new Array();
     //if (itemCap.getClass().toString().equals("com.accela.aa.aamain.cap.CapModel"))   { // page flow script 
 	 if ("ApplicationSubmitBefore".equals(aa.env.getValue("EventName"))) {
@@ -10098,6 +10100,7 @@ function getContactObjs(itemCap) // optional typeToLoad, optional return only on
 	var typesToLoad = false;
 	if (arguments.length == 2) typesToLoad = arguments[1];
 	var capContactArray = null;
+	var cap = aa.cap.getCapViewBySingle(itemCap);
 	var cArray = new Array();
 
 	var capContactArray = cap.getContactsGroup().toArray() ;
