@@ -1,3 +1,6 @@
+/**
+ * Requires parity between CONTACT TYPE and CONTACT RELATIONSHIP standard choices
+ */
 function setContactRelToContactType() {
 	try {
 
