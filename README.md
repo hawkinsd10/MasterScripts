@@ -1,6 +1,8 @@
 # MasterScripts
 
-9.2.0 Branch created for next release. 
+9.2.1 branch created for next release. 
+
+9.2.0 Branch created for next release. - This branch has been merged to the master on 10/17/2017 with 9 changes. 
 * Changes made to functions in INCLUDES_ACCELA_FUNCTIONS and INCLUDES_ACCELA_FUNCTIONS_ASB folders will be compiled and added to the appropriate files after all changes are made and merge with Master is ready. 
 
 9.0.0 Branch for new release procedure
