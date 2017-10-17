@@ -9,7 +9,7 @@
 |
 /------------------------------------------------------------------------------------------------------*/
 
-var INCLUDE_VERSION = "3.2.0";
+var INCLUDE_VERSION = "3.2.1";
 
 function getContactArrayBefore()
 	{

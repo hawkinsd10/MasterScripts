@@ -4615,7 +4615,7 @@ function copyConditionsFromParcel(parcelIdString)
 			
 			if (!appHasCondition(thisC.getConditionType(),null,thisC.getConditionDescription(),thisC.getImpactCode()))
 				{
-				var addCapCondResult = aa.capCondition.addCapCondition(capId, thisC.getConditionType(), thisC.getConditionDescription(), thisC.getConditionComment(), thisC.getEffectDate(), thisC.getExpireDate(), sysDate, thisC.getRefNumber1(),thisC.getRefNumber2(), thisC.getImpactCode(), thisC.getIssuedByUser(), thisC.getStatusByUser(), thisC.getConditionStatus(), currentUserID, "A")
+				var addCapCondResult = aa.capCondition.addCapCondition(capId, thisC.getConditionType(), thisC.getConditionDescription(), thisC.getConditionComment(), thisC.getEffectDate(), thisC.getExpireDate(), sysDate, thisC.getRefNumber1(),thisC.getRefNumber2(), thisC.getImpactCode(), thisC.getIssuedByUser(), thisC.getStatusByUser(), thisC.getConditionStatus(), currentUserID, "A", thisC.getConditionStatusType(),thisC.getDisplayConditionNotice(),thisC.getIncludeInConditionName(),thisC.getIncludeInShortDescription(),thisC.getInheritable(),thisC.getLongDescripton(),thisC.getPublicDisplayMessage(),thisC.getResolutionAction(),null,null,thisC.getConditionNumber(),thisC.getConditionGroup(),thisC.getDisplayNoticeOnACA(),thisC.getDisplayNoticeOnACAFee());
 				if (addCapCondResult.getSuccess())
 					logDebug("Successfully added condition (" +  thisC.getImpactCode() + ") " +  thisC.getConditionDescription());
 				else
@@ -9768,7 +9768,7 @@ function getContactArray()
 	// on ASA it should still be pulled normal way even though still partial cap
 	var thisCap = capId;
 	if (arguments.length == 1) thisCap = arguments[0];
-
+	var cap = aa.cap.getCapViewBySingle(thisCap);
 	var cArray = new Array();
 
 	if (arguments.length == 0 && !cap.isCompleteCap() && controlString != "ApplicationSubmitAfter") // we are in a page flow script so use the capModel to get contacts
@@ -9960,6 +9960,7 @@ function getContactObj(itemCap,typeToLoad)
 {
     // returning the first match on contact type
     var capContactArray = null;
+	var cap = aa.cap.getCapViewBySingle(itemCap);
     var cArray = new Array();
 
     if (itemCap.getClass() == "com.accela.aa.aamain.cap.CapModel")   { // page flow script 
@@ -10020,6 +10021,7 @@ function getContactObjs(itemCap) // optional typeToLoad, optional return only on
     var typesToLoad = false;
     if (arguments.length == 2) typesToLoad = arguments[1];
     var capContactArray = new Array();
+	var cap = aa.cap.getCapViewBySingle(itemCap);
     var cArray = new Array();
     //if (itemCap.getClass().toString().equals("com.accela.aa.aamain.cap.CapModel"))   { // page flow script 
 	 if ("ApplicationSubmitBefore".equals(aa.env.getValue("EventName"))) {
@@ -10064,6 +10066,7 @@ function getContactObjs(itemCap) // optional typeToLoad, optional return only on
 	var typesToLoad = false;
 	if (arguments.length == 2) typesToLoad = arguments[1];
 	var capContactArray = null;
+	var cap = aa.cap.getCapViewBySingle(itemCap);
 	var cArray = new Array();
 
 	var capContactArray = cap.getContactsGroup().toArray() ;
