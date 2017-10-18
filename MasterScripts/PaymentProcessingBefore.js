@@ -161,7 +161,7 @@ if (feeItemInvoiceModels != null && feeItemInvoiceModels != "") {
 			if (processArr[tCapId] == null) {
 				processArr[tCapId] = new Array();
 			}
-			processArr[tCapId][processArr.length] = feeItemInvoiceModel;
+			processArr[tCapId][processArr[tCapId].length] = feeItemInvoiceModel;
 	}
 }
 
