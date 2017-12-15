@@ -13,7 +13,7 @@ function generateReport(itemCap,reportName,module,parameters) {
 
   if (permit.getOutput().booleanValue()) {
     var reportResult = aa.reportManager.getReportResult(report);
-    if(reportResult) {
+    if(reportResult && reportResult.getSuccess()) {
       reportOutput = reportResult.getOutput();
       var reportFile=aa.reportManager.storeReportToDisk(reportOutput);
       reportFile=reportFile.getOutput();
